@@ -1,4 +1,5 @@
 class User:
+    user_list = []
     def __init__ (self, first_name, last_name, email, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -7,6 +8,7 @@ class User:
         # attributes below are default 
         self.is_rewards_member = False
         self.gold_card_points = 0
+        User.user_list.append(self)
     
     def display_info (self):
         print(self.first_name)
@@ -32,12 +34,13 @@ class User:
             print("User already a member")
             return False
 
-# Adrian = User("Adrian", "Awesome", "a@a.com", 40)
-# Adrian.enroll()
-# Adrian.spend_points(300)
-# Adrian.display_info()
+Adrian = User("Adrian", "Awesome", "a@a.com", 40)
+Adrian.enroll()
+Adrian.spend_points(300)
+Adrian.display_info()
 
 Brian = User("Brian", "Bossy", "b@b.com", 30)
 Brian.display_info()
 Brian.enroll()
-Brian.enroll()
+
+
