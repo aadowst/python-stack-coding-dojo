@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding: 10px;
+}
+h3, h4{
+    text-align: center;
+}
+h6{
+
+    font-weight: 400;
+    padding: 10px;
+}
+.box{
+    padding: 5px;
+    width: 400px;
+    border: 4px solid rgb(254, 192, 7);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.box label{
+    padding: 10px 0px 0px 5px;
+}
+
+.box *{
+    margin: 0px 10px 0px 4px;
+}
+
+#radio_buttons{
+    display: inline-block;
+    width: 100%;
+
+}
+
+
+
+#sub-btn{
+    margin: 15px 0px 10px 3px;
+
+}
