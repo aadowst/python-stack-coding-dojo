@@ -1,0 +1,43 @@
+.main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.table{
+    width: 80%;
+}
+
+.nav{
+    justify-content: space-between;
+    align-items: center;
+}
+
+tr{
+    border: solid black;
+}
+.row{
+    width:80%;
+    margin: auto;
+}
+.submit{
+    margin: 20px 0px;
+    box-shadow: 2px 2px;
+}
+
+.form{
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+    padding-top: 10px;
+    border: 2px, black;
+    margin-bottom: 20px;
+
+}
+.add-box{
+    width: 50%
+}
+.add-input, select{
+    width: 250px;
+    margin: 10px 0px;
+}
+

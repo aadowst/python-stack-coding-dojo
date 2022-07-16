@@ -1,0 +1,36 @@
+/* Ninja Gold */
+.container{
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.location{
+    outline: 2px solid black;
+
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0px 10px 0px;
+}
+
+.navbar, .card {
+
+    padding: 5px 0px 10px 0px;
+}
+
+#lost{
+    color: red;
+}
+
+#won{
+    color: green;
+}

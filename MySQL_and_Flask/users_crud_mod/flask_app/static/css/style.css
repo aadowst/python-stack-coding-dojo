@@ -1,0 +1,21 @@
+.main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.table{
+    width: 80%;
+}
+
+.nav{
+    justify-content: space-between;
+    align-items: center;
+}
+
+tr{
+    border: solid black;
+}
+
+.submit{
+    margin-top: 20px;
+}
+

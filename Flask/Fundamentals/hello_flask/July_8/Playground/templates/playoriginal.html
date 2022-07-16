@@ -1,0 +1,38 @@
+<!-- this page uses internal styling, which works  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+</head>
+<style>
+
+.container{
+    display: flex;
+}
+.box{
+
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: {{ color }};
+    outline: 3px solid black;
+    border-radius: 10px;
+}
+
+
+</style>
+<body>
+    <h2>Welcome!</h2>
+    <div class="container">
+{% for x in range(0,count) %}
+        <div class="box"></div>
+{% endfor %}
+
+<!-- Try inline styling if internal css doesn't work!
+<div class="box" style="background-color:blue"></div> -->
+    </div>
+</body>
+</html>

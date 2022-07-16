@@ -1,0 +1,32 @@
+insert into users (first_name, last_name)
+values ('Amy', 'Giver'), ('Eli', 'Byers'), ('Marky', 'Mark'), ('Kermit', 'The Frog'), ('Big', 'Bird'), ('Ted', 'Lasso');
+
+insert into friendships (user_id, friend_id)
+values (1,2), (1, 4), (1, 6), (2,1), (2, 3), (2, 5), (3,2), (3,5), (4, 3), (5,1), (5,6), (6,2), (6,3);
+
+select users.first_name, users.last_name, users2.first_name as friend_first_name, users2.last_name as friend_last_name
+from users
+join friendships
+on users.id = friendships.user_id
+left join users as users2
+on users2.id = friendships.friend_id;
+
+select first_name, last_name
+from users
+join friendships
+on users.id = friendships.user_id
+where friendships.friend_id=1;
+
+SELECT COUNT(user_id)
+from friendships;
+
+-- Todo: Find out who has the most friends and return the count of their friends 
+-- Select count(user_id)
+-- from friendships
+-- where
+
+select first_name, last_name
+from users
+join friendships
+on users.id = friendships.user_id
+where friendships.friend_id=3;

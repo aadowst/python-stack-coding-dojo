@@ -1,0 +1,21 @@
+body{
+    background-image: linear-gradient(to right, rgba(0,255,100,.5), rgba(0, 255, 100, 0.8));
+}
+.box{
+    display: flex;
+    justify-content: center;
+}
+button{
+    /* width: 150px;
+    height: 60px; */
+    margin: 5px;
+}
+h2, h3, h4{
+    color: darkblue;
+    text-align: center;
+    margin: 10px 0px;
+}
+input{
+    margin: 5px 0px;
+    max-width: 100px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Number Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+
+    <h2 class="text-center">Welcome to the Great Number Game</h2>
+    <h3 class="text-center">You have {{ session['count'] }} guess(es) left</h3>
+
+
+        <h4>I am thinking of a number between 1 and 100</h4>
+
+
+
+        <div class="wrong">
+            <h2>Too {{ session['high_low'] }}</h2>
+        </div>
+
+
+        <h4>Guess again!</h4>
+
+
+            <form action="/guess" method="post">
+                <input type="text" name="guess" placeholder="##">
+                <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+            </form>
+    
+
+
+
+</div>
+
+</body>
+</html>

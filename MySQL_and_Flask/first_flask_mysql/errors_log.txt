@@ -1,0 +1,26 @@
+removed parameter db from def __init__
+- TypeError: MySQLConnection.__init__() takes 1 positional argument but 2 were given
+
+commented out import pymysql.cursors
+-NameError: name 'pymysql' is not defined
+
+commented out all of def query_db()
+-AttributeError: 'MySQLConnection' object has no attribute 'query_db'
+
+commented out 'return result' from the #Select queries section
+-TypeError: 'NoneType' object is not iterable
+
+commented out self.connection.close()
+-IndentationError: expected an indented block after 'finally' statement on line 39 (and crashed the server)
+
+removed the default of None from the data parameter in def query_db()
+-TypeError: MySQLConnection.query_db() missing 1 required positional argument: 'data'
+
+commented out password = 'root'
+-pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+
+commented out 'autocommit = True' from the assignment of connection
+-no effect
+
+commented out all of the #INSERT queries section
+-TypeError: 'NoneType' object is not iterable

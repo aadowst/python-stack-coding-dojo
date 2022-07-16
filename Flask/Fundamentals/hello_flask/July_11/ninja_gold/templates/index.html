@@ -1,0 +1,79 @@
+<!-- Ninja Gold -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Number Game</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/July_11/ninja_gold/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar bg-light col-6">
+
+            <h5 class="text-center">You have {{ session['total_gold'] }} gold coins</h5>
+            <h5 class="text-center">You have {{ session['count'] }} guess(es) left</h5>
+        </div>
+
+        <div class="row col-8">
+
+            <div class="col-2 location">
+                <h5>Farm</h5>
+                <h6>(earn 10-20 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="choice" value="Farm">
+                    <button type="submit" class="btn btn-warning">Find Gold</button>
+                </form>
+            </div>
+
+            <div class="col-2 location">
+                <h5>Cave</h5>
+                <h6>(earn 5-10 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="choice" value="Cave">
+                    <button type="submit" class="btn btn-warning">Find Gold</button>
+                </form>
+            </div>
+
+            <div class="col-2 location">
+                <h5>House</h5>
+                <h6>(earn 2-5 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="choice" value="House">
+                    <button type="submit" class="btn btn-warning">Find Gold</button>
+                </form>
+            </div>
+
+            <div class="col-2 location">
+                <h5>Casino</h5>
+                <h6>(earn/lose 0-50 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="choice" value="Casino">
+                    <button type="submit" class="btn btn-warning">Find Gold</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card col-6">
+            <div class="card-header">Activities:</div>
+            <div class="card-body">
+                {{ session['activities']|safe }}
+            </div>
+
+        </div>
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

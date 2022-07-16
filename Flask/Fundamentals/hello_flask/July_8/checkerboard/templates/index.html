@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Checkerboard</title>
+</head>
+<body>
+    <h1>Hello Checkerboard</h1>
+    <div class="container">
+
+        <div class="container">
+
+            <!-- CODE FOR SETTING BOTH ROW AND COLUMN AND CHANGING COLOR -->
+            {% for i in range (0, count)%}
+            <div class="row">
+                {% for j in range(0,column) %}
+                <div class="box1" style="background-color: {{ dark }}">1111</div>
+                <div class="box2" style="background-color: {{ light }}">2222</div>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+                {% for j in range(0,column) %}
+                <div class="box2" style="background-color: {{ light }}">3333</div>
+                <div class="box1" style="background-color: {{ dark }}">4444</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+
+            <!-- CODE FOR SETTING BOTH ROW AND COLUMN
+            {% for i in range (0, count)%}
+            <div class="row">
+                {% for j in range(0,column) %}
+                <div class="box1">1111</div>
+                <div class="box2">2222</div>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+                {% for j in range(0,column) %}
+                <div class="box2">3333</div>
+                <div class="box1">4444</div>
+                {% endfor %}
+            </div>
+            {% endfor %} -->
+
+            <!-- CODE FOR MAIN ASSIGNMENT REQUIREMENTS (NOT BONUS)
+            <div class="container">
+
+                {% for y in range (0, count)%}
+                <div class="row">
+                    {% for x in range(0,4) %}
+                    <div class="box1">1111</div>
+                    <div class="box2">2222</div>
+                    {% endfor %}
+                </div>
+    
+                <div class="row">
+                    {% for x in range(0,4) %}
+                    <div class="box2">3333</div>
+                    <div class="box1">4444</div>
+                    {% endfor %}
+                </div>
+                {% endfor %} -->
+    
+
+
+    </div>
+</body>
+</html>

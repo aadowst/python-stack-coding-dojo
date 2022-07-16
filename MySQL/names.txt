@@ -1,0 +1,5 @@
+select name from names;
+insert into names(name)
+values ('Adrian');
+insert into names(name)
+values ('Ninja'), ('Bonus');

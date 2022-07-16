@@ -1,0 +1,51 @@
+body{
+    background-image: linear-gradient(to right,rgba(242, 255, 0, 0.1), rgba(242, 255, 100, 0.8));
+}
+.container, form{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.container{
+    min-width: 100%;
+    min-height: 100%;
+}
+button{
+    width: 100px;
+    margin: 5px;
+    padding: 0px;
+    outline: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+h2, h3, h4{
+    color:darkslategray
+    text-align: center;
+    margin: 10px 0px;
+}
+input{
+    margin: 5px 0px;
+    max-width: 50px;
+    text-align: center;
+}
+
+.winner, .wrong{
+    background-color: rgb(40, 189, 40);
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+
+}
+
+.wrong{
+    background-color: rgb(189, 64, 89);
+}
