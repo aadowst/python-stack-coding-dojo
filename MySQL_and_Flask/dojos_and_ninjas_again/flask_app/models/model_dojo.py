@@ -1,5 +1,7 @@
 # import the function that will return an instance of a connection
+
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models import model_ninja
 
 # model the class after the friend table from our database
 class Dojo:
@@ -42,6 +44,25 @@ class Dojo:
 
 
     @classmethod
+    def get_dojo_with_ninjas(cls, data):
+        query = "SELECT * from dojos LEFT JOIN ninjas on ninjas.dojo_id = dojos.id WHERE dojos.id = %(id)s;"
+        results = connectToMySQL('dojos_and_ninjas').query_db(query, data)
+        dojo = cls(results[0])
+
+        for row_from_db in results:
+            ninja_data = {
+                "id": row_from_db["ninjas.id"],
+                "first_name": row_from_db["first_name"],
+                "last_name": row_from_db["last_name"],
+                "age": row_from_db["age"],
+                "dojo_id": row_from_db["id"]
+            }
+
+        dojo.ninjas.append(model_ninja.Ninja(ninja_data))
+        return dojo
+
+
+    @classmethod
     def edit(cls, data):
         query = "UPDATE dojos SET name = %(name)s WHERE id = %(id)s;"
         return connectToMySQL('dojos_and_ninjas').query_db( query, data)
@@ -52,5 +73,3 @@ class Dojo:
         query = "DELETE FROM dojos WHERE id = %(id)s;"
         connectToMySQL('dojos_and_ninjas').query_db(query, id)
         return
-
-

@@ -32,11 +32,11 @@ def read_all_dojos():
 
 @app.route('/dojo/<int:id>')
 def read_one_dojo(id):
-    # get the info about the specific dojo
-    dojo = Dojo.get_one({"id": id})
+    dojo = Dojo.get_dojo_with_ninjas({"id": id})
     print(dojo)
-    ninjas = Ninja.ninjas_at_one_dojo({"dojo_id": id})
-    return render_template ("one_dojo.html", ninjas=ninjas, dojo=dojo)
+    return render_template("one_dojo.html", dojo=dojo)
+    
+
 
 # ***********************************UPDATE TO GO HERE ******************************************
 

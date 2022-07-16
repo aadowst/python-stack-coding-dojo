@@ -8,13 +8,11 @@ class Ninja:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.age = data['age']
-        self.created_at = data['created_at']
-        self.updated_at = data['updated_at']
+        # self.created_at = data['created_at']
+        # self.updated_at = data['updated_at']
         self.dojo_id = data['dojo_id']
-    # Now we use class methods to query our database
 
 
-    # class method to save our ninja to the database
     @classmethod
     def save(cls, data ):
 
@@ -28,11 +26,11 @@ class Ninja:
 #  query = "SELECT * FROM ninjas JOIN dojos on dojos.id = ninjas.dojo_id WHERE ninjas.dojo_id = %(dojo_id)s;"
         query = "SELECT * FROM ninjas WHERE dojo_id = %(dojo_id)s;"
         results = connectToMySQL('dojos_and_ninjas').query_db(query, dojo_id)
-        print(results)
         ninjas = []
         # Iterate over the db results and create instances of friends with cls.
         for ninja in results:
             ninjas.append( cls(ninja) )
+        print(ninjas[0], ninjas[1])
         return ninjas
 
 
