@@ -59,6 +59,7 @@ class Dojo:
             }
 
         dojo.ninjas.append(model_ninja.Ninja(ninja_data))
+        
         return dojo
 
 
