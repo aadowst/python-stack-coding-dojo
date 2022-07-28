@@ -60,17 +60,21 @@ class Author:
     def get_author_with_books_favorites(cls, data):
         query = "select * from authors left join favorites on authors.id = favorites.author_id left join books on favorites.book_id = books.id where authors.id = %(id)s;"
         results = connectToMySQL('books_sql_db').query_db(query, data)
+        if not results:
+            return []
         author_data = cls(results[0])
         
         for row_from_db in results:
-            book_data = {
-                "id": row_from_db["books.id"],
-                "title": row_from_db["title"],
-                "num_of_pages": row_from_db["num_of_pages"],
-                "created_at": row_from_db["books.created_at"],
-                "updated_at": row_from_db["books.updated_at"]
-            }
-            author_data.favorite_books.append(model_book.Book(book_data))
+            if not results[0]["books.id"]:
+
+                book_data = {
+                    "id": row_from_db["books.id"],
+                    "title": row_from_db["title"],
+                    "num_of_pages": row_from_db["num_of_pages"],
+                    "created_at": row_from_db["books.created_at"],
+                    "updated_at": row_from_db["books.updated_at"]
+                }
+                author_data.favorite_books.append(model_book.Book(book_data))
         return author_data
 
 
